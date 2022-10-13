@@ -8,22 +8,22 @@ import javafx.scene.layout.VBox;
 import javafx.scene.paint.Color;
 import javafx.stage.Stage;
 
-public class ThreeRectangles extends Application {
+public class ThreeSquaresAdvanced extends Application {
     @Override
-    public void start(Stage stage) throws Exception {
+    public void start(Stage stage) {
         Canvas canvas = new Canvas(500, 500);
         GraphicsContext gc = canvas.getGraphicsContext2D();
 
-        gc.setFill(Color.RED);
-        gc.fillRect(100, 50, 100, 100);
+        Color[] colors = { Color.RED, Color.GREEN, Color.BLUE };
+        int[] xs = { 100, 300, 50 };
+        int[] ys = { 50, 100, 300 };
 
-        gc.setFill(Color.GREEN);
-        gc.fillRect(300, 100, 100, 100);
+        for (int i = 0; i < colors.length; ++i) {
+            gc.setFill(colors[i]);
+            gc.fillRect(xs[i], ys[i], 100, 100);
+        }
 
-        gc.setFill(Color.BLUE);
-        gc.fillRect(50, 300, 100, 100);
-
-        stage.setTitle("three rectangles");
+        stage.setTitle("three rectangles - advanced version");
         stage.setScene(new Scene(new VBox(canvas)));
         stage.show();
     }

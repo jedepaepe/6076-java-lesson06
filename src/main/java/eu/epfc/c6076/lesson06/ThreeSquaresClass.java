@@ -8,22 +8,23 @@ import javafx.scene.layout.VBox;
 import javafx.scene.paint.Color;
 import javafx.stage.Stage;
 
-public class ThreeRectanglesAdvanced extends Application {
+public class ThreeSquaresClass extends Application {
     @Override
     public void start(Stage stage) {
         Canvas canvas = new Canvas(500, 500);
         GraphicsContext gc = canvas.getGraphicsContext2D();
 
-        Color[] colors = { Color.RED, Color.GREEN, Color.BLUE };
-        int[] xs = { 100, 300, 50 };
-        int[] ys = { 50, 100, 300 };
-
-        for (int i = 0; i < colors.length; ++i) {
-            gc.setFill(colors[i]);
-            gc.fillRect(xs[i], ys[i], 100, 100);
+        Square[] squares = {
+                new Square(Color.RED, 100, 50),
+                new Square(Color.GREEN, 300, 100),
+                new Square(Color.BLUE, 50, 300)
+        };
+        for (Square square : squares) {
+            gc.setFill(square.color());
+            gc.fillRect(square.x(), square.y(), 100, 100);
         }
 
-        stage.setTitle("three rectangles - advanced version");
+        stage.setTitle("three squares with record");
         stage.setScene(new Scene(new VBox(canvas)));
         stage.show();
     }
