@@ -8,7 +8,7 @@ import javafx.scene.layout.VBox;
 import javafx.scene.paint.Color;
 import javafx.stage.Stage;
 
-public class ThreeSquaresClass extends Application {
+public class ThreeSquaresRecord extends Application {
     @Override
     public void start(Stage stage) {
         Canvas canvas = new Canvas(500, 500);
