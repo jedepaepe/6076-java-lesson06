@@ -19,6 +19,7 @@ public class ThreeSquaresRecord extends Application {
                 new Square(Color.GREEN, 300, 100),
                 new Square(Color.BLUE, 50, 300)
         };
+
         for (Square square : squares) {
             gc.setFill(square.color());
             gc.fillRect(square.x(), square.y(), 100, 100);
