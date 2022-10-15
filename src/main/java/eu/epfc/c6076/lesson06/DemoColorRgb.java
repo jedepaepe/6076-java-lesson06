@@ -11,7 +11,7 @@ import javafx.stage.Stage;
 public class DemoColorRgb extends Application {
     @Override
     public void start(Stage stage) {
-        int size = 50;
+        int size = 80;
         Canvas canvas = new Canvas(10 * size, 2 * size);
         GraphicsContext gc = canvas.getGraphicsContext2D();
 
