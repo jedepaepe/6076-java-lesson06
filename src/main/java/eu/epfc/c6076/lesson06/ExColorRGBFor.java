@@ -8,7 +8,7 @@ import javafx.scene.layout.VBox;
 import javafx.scene.paint.Color;
 import javafx.stage.Stage;
 
-public class ExColorRGB extends Application {
+public class ExColorRGBFor extends Application {
 
     @Override
     public void start(Stage stage) {
