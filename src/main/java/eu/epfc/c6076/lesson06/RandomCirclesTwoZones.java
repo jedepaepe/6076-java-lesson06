@@ -1,0 +1,37 @@
+package eu.epfc.c6076.lesson06;
+
+import javafx.application.Application;
+import javafx.scene.Scene;
+import javafx.scene.canvas.Canvas;
+import javafx.scene.canvas.GraphicsContext;
+import javafx.scene.layout.VBox;
+import javafx.scene.paint.Color;
+import javafx.stage.Stage;
+
+public class RandomCirclesTwoZones extends Application {
+
+    @Override
+    public void start(Stage stage) {
+        double radius = 20;
+        Canvas canvas = new Canvas(500, 500);
+        GraphicsContext gc = canvas.getGraphicsContext2D();
+
+        gc.setFill(Color.BLACK);
+        gc.fillRect(0, 0, canvas.getWidth(), canvas.getHeight());
+
+        for (int i = 0; i < 500; ++i) {
+            double x = Math.random() * (canvas.getWidth() - radius);
+            double y = Math.random() * (canvas.getHeight() - radius);
+            if (y <= canvas.getHeight() / 2 - radius / 2) {
+                gc.setFill(Color.GOLD);
+            } else {
+                gc.setFill(Color.ORANGE);
+            }
+            gc.fillOval(x, y, radius, radius);
+        }
+
+        stage.setScene(new Scene(new VBox(canvas)));
+        stage.setTitle("cercles placés au hazard de couleurs différentes suivant la zone");
+        stage.show();
+    }
+}
